@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const initialState = {
-  token: localStorage.getItem("token")
-    ? JSON.parse(localStorage.getItem("token"))
-    : null,
+  token: localStorage.getItem("token") || null,
 };
 
 const authSlice = createSlice({

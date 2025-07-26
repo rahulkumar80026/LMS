@@ -2,10 +2,17 @@ import React from "react";
 import { Link, matchPath, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo/Logo-Full-light.png";
 import { NavbarLinks } from "../../data/navbar-links";
+import { useSelector } from "react-redux";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import ProfileDropDown from "../core/Auth/ProfileDropDOwn";
+
 
 function NavBar() {
-  const location = useLocation();
+  const { token } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.profile);
+  const { totalItems } = useSelector((state) => state.cart);
 
+  const location = useLocation();
   const matchRoute = (route) => {
     if (!route) return false;
     return matchPath({ path: route }, location.pathname);
@@ -46,8 +53,21 @@ function NavBar() {
 
         {/* Login/SignUp/Dashboard  */}
 
-        <div className="flex gap-4 ">
-
+        <div className="flex gap-4 items-center ">
+          {user && user?.accountType != "INSTRUCTOR" ? (
+            <Link to="/dashboard/cart" className="relative">
+              <AiOutlineShoppingCart />
+              {totalItems > 0 && <span>{totalItems}</span>}
+            </Link>
+          ) : null}
+          {token === null && (
+            <Link to="/login">
+              <button className="bg-yellow-25 text-richblack-900 px-4 py-2 rounded-md">
+                Login
+              </button>
+            </Link>
+          )}
+          {token !== null && <ProfileDropDown />}
         </div>
       </div>
     </div>
