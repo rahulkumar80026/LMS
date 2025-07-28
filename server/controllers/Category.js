@@ -25,6 +25,7 @@ exports.createCategory = async (req, res) => {
   }
 };
 
+
 exports.showAllCategories = async (req, res) => {
   try {
     const allCategorys = await Category.find(
