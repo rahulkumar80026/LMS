@@ -25,7 +25,7 @@ const subLinks = [
     link: "/catalog/graphic-design",
   },
 ];
-
+// ------------------------------------------------------------------------------
 function NavBar() {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
