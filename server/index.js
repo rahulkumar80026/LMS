@@ -3,6 +3,7 @@ var cors = require('cors')
 const app = express();
 const cookiesParser = require("cookie-parser")
 
+app.use(express.json)
 // path route
 const userRoutes = require("./routes/User")
 const profileRoutes = require("./routes/Profile")
