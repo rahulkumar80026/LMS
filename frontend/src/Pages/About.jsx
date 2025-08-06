@@ -7,6 +7,7 @@ import Quote from "../components/core/AboutPage/Quote"
 import FoundingStory from "../assets/Images/FoundingStory.png"
 import StatsComponenet from "../components/core/AboutPage/Stats"
 import LearningGride from "../components/core/AboutPage/LearningGride";
+import ContactFormSection from "../components/core/AboutPage/ContactFormSection";
 
 function About() {
   return (
@@ -103,7 +104,7 @@ function About() {
       <StatsComponenet />
      <section className="mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white">
         <LearningGride/>
-        {/* <ContactFormSection /> */}
+        <ContactFormSection />
       </section>
     </div>
   );
