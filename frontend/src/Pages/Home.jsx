@@ -45,9 +45,9 @@ function Home() {
           </CTAButton>
         </div>
         {/* Video Play  */}
-        <div className="shadow-blue-200 mx-3 my-10">
-          <video muted loop autoPlay>
-            <source src={Banner} type="video/mp4"></source>
+        <div className="shadow-lg shadow-blue-400 mx-3 my-10 rounded-lg overflow-hidden">
+          <video muted loop autoPlay className="w-full h-auto">
+            <source src={Banner} type="video/mp4" />
           </video>
         </div>
 

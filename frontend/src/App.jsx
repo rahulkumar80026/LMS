@@ -8,6 +8,7 @@ import OpenRoute from "./components/core/Auth/OpenRoute";
 import Login from "./Pages/Login";
 import ForgotPassword from "./Pages/ForgotPassword";
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
               </OpenRoute>
             }
           ></Route>
+          <Route path="/contact" element={<Contact />}></Route>
         </Routes>
       </div>
     </>
